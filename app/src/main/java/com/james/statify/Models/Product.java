@@ -1,14 +1,14 @@
 package com.james.statify.Models;
 
-public class Products {
+public class Product {
     int sold;
     String name;
     float revenue;
 
-    public Products(int s, String n, float r) {
-        sold = s;
-        name = n;
-        revenue = r;
+    public Product(int sold, String name, float revenue) {
+        this.sold = sold;
+        this.name = name;
+        this.revenue = revenue;
     }
 
     public int getSold() {
