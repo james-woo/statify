@@ -16,8 +16,6 @@ import com.james.statify.Models.Product;
 import com.james.statify.R;
 import com.james.statify.Utils.JsonUtil;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

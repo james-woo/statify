@@ -80,7 +80,7 @@
             android:id="@+id/product_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
+            android:layout_weight="0.3"
             android:text="Product"
             android:textStyle="bold" />
 
@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Revenue"
+            android:text="Revenue ($)"
             android:textStyle="bold" />
     </LinearLayout>
 

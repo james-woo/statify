@@ -16,7 +16,7 @@
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight="0.3"
         android:text="name" />
 
     <TextView
