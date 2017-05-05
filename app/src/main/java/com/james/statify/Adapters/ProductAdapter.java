@@ -1,6 +1,8 @@
 package com.james.statify.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     private ArrayList<Product> products;
     private Context context;
+    private String selected = "";
 
     public ProductAdapter(ArrayList<Product> products, Context context) {
         this.products = products;
@@ -25,6 +28,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     public Context getContext() {
         return context;
+    }
+
+    public void setSelected(String selection) {
+        selected = selection;
     }
 
     @Override
@@ -47,13 +54,25 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         // Set item views based on product data model
         TextView sold = viewHolder.soldTextView;
-        sold.setText(String.valueOf(product.getSold()));
+        sold.setText(String.valueOf(product.getQuantity()));
 
         TextView name = viewHolder.nameTextView;
         name.setText(product.getName());
 
         TextView revenue = viewHolder.revenueTextView;
         revenue.setText(String.format(Locale.getDefault(), "%.2f", product.getRevenue()));
+
+        if (products.get(position).getName() == selected) {
+            viewHolder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent));
+            sold.setTextColor(Color.WHITE);
+            name.setTextColor(Color.WHITE);
+            revenue.setTextColor(Color.WHITE);
+        } else {
+            viewHolder.itemView.setBackgroundColor(Color.TRANSPARENT);
+            sold.setTextColor(Color.BLACK);
+            name.setTextColor(Color.BLACK);
+            revenue.setTextColor(Color.BLACK);
+        }
     }
 
     @Override
